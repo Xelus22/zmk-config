@@ -31,4 +31,13 @@ config ZMK_USB
 config ZMK_BATTERY_VOLTAGE_DIVIDER
 	default y
 
-endif # BOARD_ONE42
+config MAX17055
+    bool "MAX17055 Fuel Gauge"
+    depends on I2C && SENSOR
+    help
+      Enable I2C-based driver for MAX17055 Fuel Gauge. This driver supports
+      reading various sensor settings including charge level percentage,
+      time to full/empty, design voltage, temperature and remaining
+      capacity in mA.
+
+endif # BOARD_PRAXIS
