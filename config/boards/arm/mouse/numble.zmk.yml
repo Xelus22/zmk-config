@@ -1,0 +1,13 @@
+file_format: "1"
+id: nezumi
+name: Nezumi
+type: board
+arch: arm
+features:
+  - keys
+  - encoder
+outputs:
+  - usb
+  - ble
+url: test
+description: Bluetooth wireless numpad
