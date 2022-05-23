@@ -1,13 +1,13 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if BOARD_PRAXIS
+if BOARD_NEZUMI
 
 config ZMK_KEYBOARD_NAME
-    default "Praxis"
+    default "Nezumi"
 
 config BOARD
-	default "praxis"
+	default "nezumi"
 
 if USB
 
@@ -28,6 +28,9 @@ config ZMK_BLE
 config ZMK_USB
 	default y
 
+config ZMK_BATTERY_NRF_VDDH
+    default y
+
 config MAX17055
     bool "MAX17055 Fuel Gauge"
     depends on I2C && SENSOR
@@ -37,4 +40,4 @@ config MAX17055
       time to full/empty, design voltage, temperature and remaining
       capacity in mA.
 
-endif # BOARD_PRAXIS
+endif # BOARD_NEZUMI

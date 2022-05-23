@@ -1,6 +1,6 @@
-identifier: one42
-name: one42
-type: mcu
+identifier: nezumi
+name: Nezumi
+type: keyboard
 arch: arm
 toolchain:
   - zephyr

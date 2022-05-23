@@ -34,25 +34,25 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build Praxis
-        run: west build -s zmk/app -b praxis -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Praxis Kconfig file
+      - name: West Build Nezumi
+        run: west build -s zmk/app -b nezumi -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+      - name: Nezumi Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 praxis.uf2
-      - name: Archive (praxis)
+        run: cp build/zephyr/zmk.uf2 nezumi.uf2
+      - name: Archive (nezumi)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: praxis.uf2
-      - name: West Build Praxis_reset
-        run: west build -s zmk/app -b praxis -- -DSHIELD=settings_reset 
-      - name: Praxis_reset Kconfig file
+          path: nezumi.uf2
+      - name: West Build Nezumi_reset
+        run: west build -s zmk/app -b nezumi -- -DSHIELD=settings_reset 
+      - name: Nezumi_reset Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 praxis_reset.uf2
-      - name: Archive (praxis_reset)
+        run: cp build/zephyr/zmk.uf2 nezumi_reset.uf2
+      - name: Archive (nezumi_reset)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: praxis_reset.uf2
+          path: nezumi_reset.uf2
