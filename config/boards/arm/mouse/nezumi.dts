@@ -7,8 +7,6 @@
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 
 / {
     model = "Nezumi";
@@ -46,7 +44,7 @@
 
         right {
             kscan = <&kscan_right>;
-            column-offset = <3>;
+            column-offset = <2>;
         };
     };
 
