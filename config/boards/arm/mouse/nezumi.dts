@@ -106,8 +106,8 @@
 &i2c0 {
     compatible = "nordic,nrf-twi";
     status = "okay";
-    sda-pin = <(32 + 9)>;
-    scl-pin = <5>;
+    sda-pin = <10>;
+    scl-pin = <9>;
 
     fuel_gauge: max17055@36 {
         compatible = "maxim,max17055";
