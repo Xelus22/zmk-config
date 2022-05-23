@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.5
+      image: zmkfirmware/zmk-build-arm:stable
     name: Build
     steps:
       - name: Checkout
@@ -50,9 +50,6 @@ jobs:
           path: praxis.uf2
       - name: West Build Praxis_reset
         run: west build -s zmk/app -b praxis -- -DSHIELD=settings_reset 
-      - name: Praxis DTS File
-        if: ${{ always() }}
-        run: cat -n build/zephyr/praxis.dts.pre.tmp
       - name: Praxis_reset Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
