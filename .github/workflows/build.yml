@@ -36,9 +36,6 @@ jobs:
         run: west zephyr-export
       - name: West Build Praxis
         run: west build -s zmk/app -b praxis -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Praxis DTS File
-        if: ${{ always() }}
-        run: cat -n build/zephyr/praxis.dts.pre.tmp
       - name: Praxis Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
