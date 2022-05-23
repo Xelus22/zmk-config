@@ -52,8 +52,8 @@
         compatible="zmk,kscan-gpio-direct";
         label = "KSCAN_LEFT";
 
-        debounce-press-ms = 0;
-        debounce-release-ms = 0;
+        debounce-press-ms = <0>;
+        debounce-release-ms = <0>;
 
         input-gpios
         = <&gpio0 4 (GPIO_ACTIVE_HIGH)>
